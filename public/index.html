@@ -13,10 +13,50 @@
   </head>
   <body>
     <div id="content"></div>
-    <script type="text/babel" src="scripts/example.js"></script>
+    <!--<script type="text/babel" src="scripts/example.js"></script>-->
     <script type="text/babel">
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
+
+      // CommentBox
+      var CommentBox = React.createClass({
+        render: function () {
+          return (
+            <div className="commonBox">
+              Hello, World! I am a Comment Box.
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <CommentBox/>,
+        document.getElementById('content')
+      );
+
+      // CommentList
+      var CommentList = React.createClass({
+        render: function () {
+          return (
+            <div className="commentList">
+              Hello, World! I am a Comment List.
+            </div>
+          );
+        }
+      });
+
+      // Comment
+      var CommentForm = React.createClass({
+        render: function () {
+          return (
+            <div className="commentForm">
+              Hello, World! I am a Comment Form.
+            </div>
+          );
+        }
+      });
+
+
     </script>
   </body>
 </html>
