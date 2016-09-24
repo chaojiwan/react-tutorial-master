@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>React Tutorial</title>
-    <!-- Not present in the tutorial. Just for basic styling. -->
-    <link rel="stylesheet" href="css/base.css" />
-    <script src="https://unpkg.com/react@15.3.0/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
-  </head>
-  <body>
-    <div id="content"></div>
-    <!--<script type="text/babel" src="scripts/example.js"></script>-->
-    <script type="text/babel">
-      // To get started with this tutorial running your own code, simply remove
-      // the script tag loading scripts/example.js and start writing code here.
+<head>
+  <meta charset="utf-8">
+  <title>React Tutorial</title>
+  <!-- Not present in the tutorial. Just for basic styling. -->
+  <link rel="stylesheet" href="css/base.css"/>
+  <script src="https://unpkg.com/react@15.3.0/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+  <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<!--<script type="text/babel" src="scripts/example.js"></script>-->
+<script type="text/babel">
+  // To get started with this tutorial running your own code, simply remove
+  // the script tag loading scripts/example.js and start writing code here.
 
-      // CommentList
-      var CommentList = React.createClass({
-        render: function () {
-          return (
-            <div className="commentList">
-              Hello, World! I am a Comment List.
-            </div>
-          );
-        }
-      });
-
-      // Comment
-      var Comment = React.createClass({
-        render: function () {
-          return (
-            <div className="comment">
-              <h2 className="commentAuthor">
-                {this.props.author}
-              </h2>
-              {this.props.children}
-            </div>
-          );
-        }
-      });
-
-      // CommentForm
-      var CommentForm = React.createClass({
-        render: function () {
-          return (
-            <div className="commentForm">
-              Hello, World! I am a Comment Form.
-            </div>
-          );
-        }
-      });
-
-      // CommentBox
-      var CommentBox = React.createClass({
-        render: function () {
-          return (
-            <div className="commonBox">
-              <h1>Comments</h1>
-              <CommentList />
-              <CommentForm />
-            </div>
-          );
-        }
-      });
-
-      ReactDOM.render(
-        <CommentBox />,
-        document.getElementById('content')
+  // CommentList
+  var CommentList = React.createClass({
+    render: function () {
+      return (
+        <div className="commentList">
+          <Comment author="Pete Hunt">This is one comment</Comment>
+          <Comment author="Jordan Walke">This is *another* comment</Comment>
+        </div>
       );
+    }
+  });
 
-    </script>
-  </body>
+  // Comment
+  var Comment = React.createClass({
+    render: function () {
+      return (
+        <div className="comment">
+          <h2 className="commentAuthor">
+            {this.props.author}
+          </h2>
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  // CommentForm
+  var CommentForm = React.createClass({
+    render: function () {
+      return (
+        <div className="commentForm">
+          Hello, World! I am a Comment Form.
+        </div>
+      );
+    }
+  });
+
+  // CommentBox
+  var CommentBox = React.createClass({
+    render: function () {
+      return (
+        <div className="commonBox">
+          <h1>Comments</h1>
+          <CommentList />
+          <CommentForm />
+        </div>
+      );
+    }
+  });
+
+  ReactDOM.render(
+    <CommentBox />,
+    document.getElementById('content')
+  );
+
+</script>
+</body>
 </html>
